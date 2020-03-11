@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--创建对象的方法1：利用无参构造器，其中：
+    id：唯一标识，
+    class:类的全限定类名
+    -->
+    <bean id="person1" class="com.qxf.pojo.Person"></bean>
+
+    <!--创建对象的方法2：利用静态工厂方法，其中：
+   id：唯一标识，
+   class:工厂类的全限定类名
+   factory-method：获取实例的工厂方法
+   -->
+    <bean id="person2" class="com.qxf.factory.StaticFactory" factory-method="getPerson"></bean>
+
+    <!--创建对象的方法3：利用实例工厂方法，其中：
+   id：唯一标识，
+   class:工厂类的全限定类名
+   factory-method：获取实例的工厂方法
+   -->
+    <bean id="myInstanceFactory" class="com.qxf.factory.InstanceFactory"></bean>
+    <bean id="person3" factory-bean="myInstanceFactory" factory-method="getPersonByInstanceFactory"></bean>
+
+    <!--<bean id="person1" class="com.qxf.pojo.Person">-->
+        <!--<property name="id" value="001"></property>-->
+        <!--<property name="name" value="张三"></property>-->
+        <!--<property name="age" value="22"></property>-->
+    <!--</bean>-->
+
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--创建bean对象，其中
+    id：唯一标识，下面的例子中，id就是 "my,person1"
+    name：就是bean的名称，也要唯一，可以有多个，用逗号分隔，下面的例子中，name有2个，you和person2
+    class:类的全限定类名
+    -->
+    <bean id="my,person1" class="com.qxf.pojo.Person" name="you,person2"></bean>
+
+</beans>

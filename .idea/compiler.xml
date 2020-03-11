@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="01-helloWorld" />
+        <module name="02-控制反转IOC" />
+        <module name="03-依赖注入DI" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="01-helloWorld" target="1.5" />
+      <module name="02-控制反转IOC" target="1.5" />
+      <module name="03-依赖注入DI" target="1.5" />
+      <module name="spring-study" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
