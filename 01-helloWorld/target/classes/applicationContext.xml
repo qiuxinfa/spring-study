@@ -8,6 +8,6 @@
     name：就是bean的名称，也要唯一，可以有多个，用逗号分隔，下面的例子中，name有2个，you和person2
     class:类的全限定类名
     -->
-    <bean id="my,person1" class="com.qxf.pojo.Person" name="you,person2"></bean>
+    <bean id="my,person1" class="com.qxf.pojo.Person" name="you,person2" scope="prototype"></bean>
 
 </beans>

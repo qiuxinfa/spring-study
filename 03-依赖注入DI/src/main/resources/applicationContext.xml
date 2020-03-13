@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--给属性赋值的方法1：利用有参构造方法，其中：
+    index: 参数下标，表示第几个参数，从0开始
+    name：是属性名，
+    value:属性值（简单数据类型）
+    ref： 属性值（对象数据类型）
+    type: 参数类型
+    -->
+    <bean id="person1" class="com.qxf.pojo.Person">
+        <constructor-arg index="0" value="001"></constructor-arg>
+        <constructor-arg index="1" value="张三"></constructor-arg>
+        <constructor-arg index="2" value="21"></constructor-arg>
+    </bean>
+
+    <!--给属性赋值的方法2：利用set方法，其中：
+    property：是属性名，
+    value:属性值（简单数据类型）
+    ref： 属性值（对象数据类型）
+    -->
+    <bean id="person2" class="com.qxf.pojo.Person">
+        <property name="id" value="002"></property>
+        <property name="name" value="李四"></property>
+        <property name="age" value="22"></property>
+    </bean>
+
+</beans>

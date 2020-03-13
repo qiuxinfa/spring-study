@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans.xsd
+                          http://www.springframework.org/schema/aop
+                          http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--创建目标类，注意：class是实现类的全限定类名，不是接口的，因为接口不能实例化-->
+    <bean id="personServiceImpl" class="com.qxf.service.impl.PersonServiceImpl"></bean>
+    <!--创建切面类，这里就是配置日志了  -->
+    <bean id="myLog" class="com.qxf.aop.LogAop"></bean>
+
+    <!--配置aop，关于切入点表达式：
+
+        第一个*：表示 任意修饰符 任意返回值
+        第二个*：表示 任意方法
+        参数列表中的2个点：表示 任意参数
+
+     合起来就是：PersonServiceImpl类中所有方法
+    -->
+    <aop:config>
+        <!-- 切入点表达式 -->
+        <aop:pointcut expression="execution(* com.qxf.service.impl.PersonServiceImpl.*(..))" id="myPointCut"/>
+        <aop:aspect ref="myLog">
+            <!-- 配置前置通知，注意 method 的值要和 对应切面的类方法名称相同 -->
+            <aop:before method="logBefore" pointcut-ref="myPointCut"></aop:before>
+            <!-- 配置后置通知，注意 method 的值要和 对应切面的类方法名称相同 -->
+            <aop:after-returning method="logAfter" pointcut-ref="myPointCut"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

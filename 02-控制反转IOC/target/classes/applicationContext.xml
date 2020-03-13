@@ -24,10 +24,4 @@
     <bean id="myInstanceFactory" class="com.qxf.factory.InstanceFactory"></bean>
     <bean id="person3" factory-bean="myInstanceFactory" factory-method="getPersonByInstanceFactory"></bean>
 
-    <!--<bean id="person1" class="com.qxf.pojo.Person">-->
-        <!--<property name="id" value="001"></property>-->
-        <!--<property name="name" value="张三"></property>-->
-        <!--<property name="age" value="22"></property>-->
-    <!--</bean>-->
-
 </beans>

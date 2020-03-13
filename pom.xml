@@ -12,6 +12,7 @@
         <module>01-helloWorld</module>
         <module>02-控制反转IOC</module>
         <module>03-依赖注入DI</module>
+        <module>04-aop</module>
     </modules>
 
     <dependencies>
